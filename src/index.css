@@ -9,12 +9,35 @@
 }
 
 @layer base {
+  html {
+    /* Reserve scrollbar space so the layout doesn't shift between short and long pages */
+    scrollbar-gutter: stable;
+  }
+
   body {
     background-color: #fafafa;
     color: #1f2937; /* gray-800 */
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Visible keyboard focus ring for every interactive element */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 

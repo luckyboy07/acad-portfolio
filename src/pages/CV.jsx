@@ -1,99 +1,84 @@
 import { motion } from "framer-motion";
-import { professorData, papers, courses, presentations } from "../data";
+import { Download } from "lucide-react";
+import { profile, papersByYear, courses, cv, pageTitle } from "../data/site";
+import { useEntrance } from "../lib/motion";
+
+function Section({ title, children, item }) {
+  return (
+    <motion.section {...item}>
+      <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">{title}</h2>
+      {children}
+    </motion.section>
+  );
+}
+
+function Entries({ entries }) {
+  return (
+    <div className="space-y-6">
+      {entries.map((entry) => (
+        <div key={`${entry.title}-${entry.period}`}>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline sm:gap-4 mb-1">
+            <h3 className="font-medium text-gray-900">{entry.title}</h3>
+            <span className="text-sm font-medium text-gray-500 shrink-0">{entry.period}</span>
+          </div>
+          <p className="text-gray-600">{entry.org}</p>
+          {entry.note && <p className="text-sm text-gray-500 mt-1">{entry.note}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function CV() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-  };
+  const entrance = useEntrance();
 
   return (
     <div className="w-full">
+      <title>{pageTitle("CV")}</title>
+
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-12 border-b border-gray-100 pb-8"
+        {...entrance.header}
+        className="mb-12 border-b border-gray-100 pb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
       >
-        <h1 className="text-3xl font-serif text-gray-900 mb-2">Curriculum Vitae</h1>
-        <p className="text-gray-500 max-w-xl">
-          {professorData.name} &mdash; {professorData.title}, {professorData.institution}.
-        </p>
+        <div>
+          <h1 className="text-3xl font-serif text-gray-900 mb-2">Curriculum Vitae</h1>
+          <p className="text-gray-600 max-w-xl">
+            {profile.name} &mdash; {profile.title}, {profile.institution}.
+          </p>
+        </div>
+        {profile.cvPdf && (
+          <a
+            href={profile.cvPdf}
+            download
+            className="shrink-0 self-start sm:self-auto inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)]"
+          >
+            <Download size={16} aria-hidden="true" />
+            Download CV (PDF)
+          </a>
+        )}
       </motion.div>
 
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-50px" }}
-        className="space-y-12"
-      >
-        {/* Education (Placeholder data) */}
-        <motion.section variants={itemVariants}>
-          <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">Education</h2>
-          <div className="space-y-6">
-            <div>
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                <h3 className="font-medium text-gray-900">Ph.D. in Computational Linguistics</h3>
-                <span className="text-sm font-medium text-gray-500">2016 &mdash; 2020</span>
-              </div>
-              <p className="text-gray-600">Stanford University</p>
-              <p className="text-sm text-gray-500 mt-1">Dissertation: "Cognitively Plausible Parsing Strategies in Neural Network Models"</p>
-            </div>
-            <div>
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                <h3 className="font-medium text-gray-900">B.A. in Linguistics and Computer Science</h3>
-                <span className="text-sm font-medium text-gray-500">2012 &mdash; 2016</span>
-              </div>
-              <p className="text-gray-600">University of Turku</p>
-            </div>
-          </div>
-        </motion.section>
+      <motion.div {...entrance.list} className="space-y-12">
+        <Section title="Education" item={entrance.item}>
+          <Entries entries={cv.education} />
+        </Section>
 
-        {/* Academic Appointments */}
-        <motion.section variants={itemVariants}>
-          <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">Academic Appointments</h2>
-          <div className="space-y-6">
-            <div>
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                <h3 className="font-medium text-gray-900">Associate Professor</h3>
-                <span className="text-sm font-medium text-gray-500">2023 &mdash; Present</span>
-              </div>
-              <p className="text-gray-600">Department of Computer Science, University of Helsinki</p>
-            </div>
-            <div>
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                <h3 className="font-medium text-gray-900">Postdoctoral Researcher</h3>
-                <span className="text-sm font-medium text-gray-500">2020 &mdash; 2023</span>
-              </div>
-              <p className="text-gray-600">Massachusetts Institute of Technology (MIT)</p>
-            </div>
-          </div>
-        </motion.section>
+        <Section title="Academic Appointments" item={entrance.item}>
+          <Entries entries={cv.appointments} />
+        </Section>
 
-        {/* Selected Publications */}
-        <motion.section variants={itemVariants}>
-          <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">Selected Publications</h2>
+        <Section title="Selected Publications" item={entrance.item}>
           <ul className="space-y-4 list-disc list-outside ml-4 text-gray-600">
-            {papers.map((paper) => (
+            {papersByYear.map((paper) => (
               <li key={paper.id} className="pl-2">
-                <span className="font-medium text-gray-900">{paper.authors}</span>. ({paper.year}). "{paper.title}". <span className="italic">{paper.venue}</span>.
+                <span className="font-medium text-gray-900">{paper.authors}</span>. ({paper.year}). "{paper.title}".{" "}
+                <span className="italic">{paper.venue}</span>.
               </li>
             ))}
           </ul>
-        </motion.section>
+        </Section>
 
-        {/* Teaching */}
-        <motion.section variants={itemVariants}>
-          <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">Teaching Experience</h2>
+        <Section title="Teaching Experience" item={entrance.item}>
           <ul className="space-y-4 list-disc list-outside ml-4 text-gray-600">
             {courses.map((course) => (
               <li key={course.id} className="pl-2">
@@ -101,20 +86,17 @@ export default function CV() {
               </li>
             ))}
           </ul>
-        </motion.section>
+        </Section>
 
-        {/* Presentations */}
-        <motion.section variants={itemVariants}>
-          <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">Invited Talks & Presentations</h2>
+        <Section title="Invited Talks & Presentations" item={entrance.item}>
           <ul className="space-y-4 list-disc list-outside ml-4 text-gray-600">
-            {presentations.map((pres) => (
+            {cv.presentations.map((pres) => (
               <li key={pres.id} className="pl-2">
                 "{pres.title}". <span className="italic">{pres.venue}</span>, {pres.year}.
               </li>
             ))}
           </ul>
-        </motion.section>
-
+        </Section>
       </motion.div>
     </div>
   );
