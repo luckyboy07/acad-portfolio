@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Lora", serif;
+  /* Defining our primary slate blue accent */
+  --color-accent-blue: #5a6b8c;
+  --color-accent-blue-hover: #4a5875;
+}
+
+@layer base {
+  body {
+    background-color: #fafafa;
+    color: #1f2937; /* gray-800 */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Base custom styles to simplify classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
