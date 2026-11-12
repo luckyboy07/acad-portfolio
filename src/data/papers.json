@@ -1,0 +1,50 @@
+[
+  {
+    "id": "2024-contextual-embeddings-for-low-resource-uralic-languages",
+    "title": "Contextual Embeddings for Low-Resource Uralic Languages",
+    "authors": "Jane Eriksson, M. Virtanen",
+    "year": 2024,
+    "venue": "ACL 2024",
+    "description": "A novel approach to training contextual embeddings using bilingual dictionary constraints to improve performance on low-resource Uralic languages."
+  },
+  {
+    "id": "2023-syntactic-parsing-as-a-cognitive-model-of-reading",
+    "title": "Syntactic Parsing as a Cognitive Model of Reading Constraints",
+    "authors": "T. Korhonen, Jane Eriksson",
+    "year": 2023,
+    "venue": "Cognitive Science",
+    "description": "Investigating whether modern dependency parsers capture the reading time constraints observed in human subjects reading complex Finnish texts."
+  },
+  {
+    "id": "2023-zero-shot-cross-lingual-transfer-in-dialog-systems",
+    "title": "Zero-Shot Cross-Lingual Transfer in Dialog Systems",
+    "authors": "Jane Eriksson, S. Ahmed, P. Davis",
+    "year": 2023,
+    "venue": "EMNLP 2023",
+    "description": "Evaluating zero-shot transfer capabilities of large language models on task-oriented dialog datasets in 15 previously unseen languages."
+  },
+  {
+    "id": "2022-beyond-bleu-semantic-evaluation-metrics-for-morphologically",
+    "title": "Beyond BLEU: Semantic Evaluation Metrics for Morphologically Rich Languages",
+    "authors": "Jane Eriksson, K. Laine",
+    "year": 2022,
+    "venue": "NAACL 2022",
+    "description": "Proposing a new semantic textual similarity metric that correlates better with human judgment for highly agglutinative languages."
+  },
+  {
+    "id": "2021-historical-corpora-construction-via-optical-character",
+    "title": "Historical Corpora Construction via Optical Character Recognition",
+    "authors": "A. Niemi, Jane Eriksson",
+    "year": 2021,
+    "venue": "LREC 2021",
+    "description": "A pipeline for extracting and cleaning text from 19th-century Finnish newspapers for linguistic analysis."
+  },
+  {
+    "id": "2020-the-role-of-prosody-in-disambiguating-spoken-instructions",
+    "title": "The Role of Prosody in Disambiguating Spoken Instructions",
+    "authors": "Jane Eriksson",
+    "year": 2020,
+    "venue": "Interspeech 2020",
+    "description": "Analyzing the role of pitch and duration in resolving syntactic ambiguities in spoken multi-modal tasks."
+  }
+]

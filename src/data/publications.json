@@ -1,0 +1,383 @@
+[
+  {
+    "id": "journal-articles",
+    "label": "Journal Articles",
+    "items": [
+      {
+        "id": "Art-016",
+        "title": "Modeling the Factors Influencing Technology Students’ Intentions to Use AI-Driven Virtual Simulation Apps in Technical Drafting and Design Education",
+        "venue": "International Journal of Technology and Design Education",
+        "year": 2026,
+        "authors": [],
+        "publisher": "Springer",
+        "doi": "10.1007/s10798-026-10101-x",
+        "cover": "https://drive.google.com/file/d/1mtM-OVEkHjO6LorxtNRuX6-frBRsiRMe/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1JUSOPxw2l_RPvMWqt_anL6zIQ0sXAVpx/view?usp=drive_link"
+      },
+      {
+        "id": "Art-015",
+        "title": "Gamifying Academic Achievement in Mathematical Physics Through Student Feedback on Leaderboard Performance Tracking",
+        "venue": "Journal of Technology and Science Education",
+        "year": 2026,
+        "authors": [],
+        "publisher": "OmniaScience",
+        "doi": "10.3926/jotse.3321",
+        "cover": "https://drive.google.com/file/d/1VaP82c9CBJnfKLids9GRGJgqJse0cOvE/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1QVMgKvQwqmWjKWttUOgH49R5P-QCgJfw/view?usp=drive_link"
+      },
+      {
+        "id": "Art-014",
+        "title": "Fostering Scientific Creativity in Science Education through Scientific Problem-Solving Approaches and STEM Contexts: A Meta-Analysis",
+        "venue": "Disciplinary and Interdisciplinary Science Education Research",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Springer",
+        "doi": "10.1186/s43031-025-00137-9",
+        "cover": "https://drive.google.com/file/d/1eAcBgdoHm55qIbyYcutTyPmpjQUDCLuR/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1w9zNbAUEpGpL0G98LIWTLFo9m_r2kIX2/view?usp=drive_link"
+      },
+      {
+        "id": "Art-013",
+        "title": "“ChatGPT 4.0 Ghosted Us While Conducting Literature Search:” Modeling the Chatbot’s Generated Non-Existent References Using Regression Analysis",
+        "venue": "Internet Reference Services Quarterly",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Taylor & Francis",
+        "doi": "10.1080/10875301.2024.2426793",
+        "cover": "https://drive.google.com/file/d/1toaTIT1n3TABwriy6uW33ICyCHxKB5Zl/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1mAYnaHPc86JXd0FxwHMcWYS1KzdjrDLl/view?usp=drive_link"
+      },
+      {
+        "id": "Art-012",
+        "title": "Exploring the Impact of Creative Assessments, Instructional Quality, and Attitudes toward Creative Learning on Teacher Readiness: A Structural Equation Modeling Approach",
+        "venue": "Social Sciences & Humanities Open",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Elsevier",
+        "doi": "10.1016/j.ssaho.2025.101675",
+        "cover": "https://drive.google.com/file/d/1bP7QrNRMq2EcqHXJyQOzpaFbb_D1lELP/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1YoHKWggvGItXRvlvTNe89uvNo9Cz59FB/view?usp=drive_link"
+      },
+      {
+        "id": "Art-011",
+        "title": "Understanding the Role of Technological Self-Efficacy in Fostering Creative Problem-Solving and Curiosity in Teacher Education: A Structural Equation Modeling Approach",
+        "venue": "Journal of Technology and Science Education",
+        "year": 2025,
+        "authors": [],
+        "publisher": "OmniaScience",
+        "doi": "10.3926/jotse.3233",
+        "cover": "https://drive.google.com/file/d/18MKwr5ioPWXedD9Z48IiwSHVHCGzGhda/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1vORCM61YLkZ5mwnRD41kVHLtbd7WnlYw/view?usp=drive_link"
+      },
+      {
+        "id": "Art-010",
+        "title": "Writing the Unwritten and Owning the Incomplete: An Autoethnographic Reflection on Addressing Study Limitations in Scholarly Research",
+        "venue": "Research Ethics",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Sage",
+        "doi": "10.1177/17470161251363704",
+        "cover": "https://drive.google.com/file/d/13QlDVQt5vS6aQ5WQPvHsnSkJ0HWhcMAW/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1uSWr3CQ9JmV4_XTk5eTCCm7LUVCGa9wF/view?usp=drive_link"
+      },
+      {
+        "id": "Art-009",
+        "title": "Future-Ready Minds, Resilient Hearts: Understanding Psychological Well-being and Resilience in College Teaching in the Philippines",
+        "venue": "Journal of Psychology and Behavior Studies",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Al-Kindi",
+        "doi": "10.32996/jpbs.2025.5.1.1",
+        "cover": "https://drive.google.com/file/d/1R9irlm3wqaFUaHgldxZH0dJ3KuQzHS7X/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1FN2yq927u8Kf6sIfEiEDLBG5I9VaTlEa/view?usp=drive_link"
+      },
+      {
+        "id": "Art-008",
+        "title": "Thinking What No One Else Has Thought: Investigating the Scientific Creativity of Primary School Students in a Science Class",
+        "venue": "Center for Educational Policy Studies Journal",
+        "year": 2024,
+        "authors": [],
+        "publisher": "University of Ljubljana",
+        "doi": "10.26529/cepsj.1514",
+        "cover": "https://drive.google.com/file/d/1KF-i3PqAcFBQ6FfBcd9PCFclv0kZVJj9/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1lnw5jRcVufZK7WYhTg9tuwgxhpAFaPDg/view?usp=drive_link"
+      },
+      {
+        "id": "Art-007",
+        "title": "From Classroom Learning to Real-World Skills: An Autoethnographic Account of School Field Trips and STEM Work Immersion Program Management",
+        "venue": "Disciplinary and Interdisciplinary Science Education Research",
+        "year": 2024,
+        "authors": [],
+        "publisher": "Springer",
+        "doi": "10.1186/s43031-024-00111-x",
+        "cover": "https://drive.google.com/file/d/1yo0D63YJW2u-VeMi_z4RIfL8GBONEYx0/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1XfX88t2r4Qq4Pd3FSbPQuYTQixLD0mTK/view?usp=drive_link"
+      },
+      {
+        "id": "Art-006",
+        "title": "Factors Affecting Students’ Concept Retention in Learning Science Online Using Instructional Videos",
+        "venue": "Journal of Education and Learning",
+        "year": 2024,
+        "authors": [],
+        "publisher": "IPMU; IAES",
+        "doi": "10.11591/edulearn.v18i2.21117",
+        "cover": "https://drive.google.com/file/d/1QIxgtKcv_q1mbgrWwEBHUxv1fDzFO47S/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/15WkLN_HsaspzPiPmEhzTMRmCRdAg0gn1/view?usp=drive_link"
+      },
+      {
+        "id": "Art-005",
+        "title": "Optimization of the Removal of Hexavalent Chromium Cr (VI) from Aqueous Solution by Moringa oleifera Bark-Derived Activated Carbon (MOBAC) Using Response Surface Methodology (RSM)",
+        "venue": "Orbital: The Electronic Journal of Chemistry",
+        "year": 2023,
+        "authors": [],
+        "publisher": "UFMS",
+        "doi": "10.17807/orbital.v15i4.19352",
+        "cover": "https://drive.google.com/file/d/1ba6HiBPNepESIySzksKq7_lT-ghYRE-r/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1GFxsZHWlFxD_Kka8ExkNQZjZCZeR94ZI/view?usp=drive_link"
+      },
+      {
+        "id": "Art-004",
+        "title": "Effectiveness of Science-Technology-Society (STS) Approach on Students’ Learning Outcomes in Science Education: Evidence from a Meta-Analysis",
+        "venue": "Journal of Technology and Science Education",
+        "year": 2023,
+        "authors": [],
+        "publisher": "OmniaScience",
+        "doi": "10.3926/jotse.2151",
+        "cover": "https://drive.google.com/file/d/13uEzrj3ng4JCQ9mPhPPzuu_Nrz0IBozA/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1Zt1bNFADOZj1TER_LoJ-5GW1iwZO33r1/view?usp=drive_link"
+      },
+      {
+        "id": "Art-003",
+        "title": "Development of an Arduino-Based Photobioreactor to Investigate Algae Growth Rate and CO2 Removal Efficiency",
+        "venue": "International Journal of Robotics and Automation",
+        "year": 2022,
+        "authors": [],
+        "publisher": "IPMU; IAES",
+        "doi": "10.11591/ijra.v11i2.pp141-160",
+        "cover": "https://drive.google.com/file/d/1m5i9FddLUd78VST18hXOJcMVwU3Qu_cX/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1MwbyqK6RaF6QrhaHQLllfBwgnwhdJLAU/view?usp=drive_link"
+      },
+      {
+        "id": "Art-002",
+        "title": "Conceptual Change Framework of Instruction (CCFI): An Instructional Model in Teaching Eclipses",
+        "venue": "Journal of Turkish Science Education",
+        "year": 2022,
+        "authors": [],
+        "publisher": "KTU",
+        "doi": "10.36681/tused.2022.141",
+        "cover": "https://drive.google.com/file/d/1DaHIROWnREE48sTqJXfJwpNMEV7njlBq/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1BRYy162ZoLCz35H1njE7g8fzTYw6Fuox/view?usp=drive_link"
+      },
+      {
+        "id": "Art-001",
+        "title": "Developing SIPCaR Projects Utilizing Modern Technologies: Its Impact to Students’ Engagement, R&D skills, and Learning Outcomes",
+        "venue": "LUMAT: International Journal on Math, Science and Technology Education",
+        "year": 2022,
+        "authors": [],
+        "publisher": "LUMAT; University of Helsinki",
+        "doi": "10.31129/LUMAT.10.1.1667",
+        "cover": "https://drive.google.com/file/d/1jcHUKFsAXwLnUi64g_EcI_T9ILO9Bh8S/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1rgRq3kUhwRUtnMErTE8jWitnxZ-LJmzC/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "id": "book-chapters",
+    "label": "Book Chapters",
+    "items": [
+      {
+        "id": "BChap-014",
+        "title": "Pedagogical Practices and Reflections on AI-Enhanced Innovation in Sustainability Education: Guiding AI Integration through the IDEA Framework",
+        "venue": "Artificial Intelligence in Sustainability Teaching and Research",
+        "year": 2026,
+        "authors": [],
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-032-34574-5_3",
+        "cover": "https://drive.google.com/file/d/1ueZWRtWPW1guR9DHKHfUXroYQg4bmWMv/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1Ngh-vvewbdHAAs9lReQpDP8JmEfAKPJU/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-013",
+        "title": "Gender-Inclusive Pedagogies in Computer Science Education: Insights, Implications, and Future Directions",
+        "venue": "Pedagogical Innovations in Computer Science Education",
+        "year": 2026,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-6546-6.ch006",
+        "cover": "https://drive.google.com/file/d/1SOEXn-DJB-JBjt5jobuHjdNpclZeSwBE/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1ZsqyC3EobbDTtx6D2oW2arDOnJh4ut6Y/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-012",
+        "title": "Determinants of Successful Integration and Adoption of AI in Education: A Structural Equation Modeling Approach",
+        "venue": "Artificial Intelligent towards Sustainable Impact Accelerator through Education, Research and Advocacy",
+        "year": 2026,
+        "authors": [],
+        "publisher": "Taylor & Francis",
+        "doi": "10.1201/9781003633433-4",
+        "cover": "https://drive.google.com/file/d/1Iudi2mlePyhXogX3IWHR56o_D1I5UwjC/view?usp=drive_link",
+        "pdf": null
+      },
+      {
+        "id": "BChap-011",
+        "title": "Transforming STEM Education through Big Data and Learning Analytics: A Review of Data-Driven Pedagogy",
+        "venue": "Data-Driven Digital Pedagogy: Applying Big Data and Learning Analytics",
+        "year": 2026,
+        "authors": [],
+        "publisher": "Wiley",
+        "doi": null,
+        "cover": "https://drive.google.com/file/d/1h_ewKKdjIgiyuIESdvlbVDPEKg3gCYJe/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1URmjnRVn_SaI69UbqWVZxlU8HzL772-N/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-010",
+        "title": "Ethical Dilemmas and Practical Strategies for Leveraging Generative AI in STEM Assessment in Higher Education",
+        "venue": "Generative AI in Higher Education Assessment: Theory, Practice, and Ethical Implications",
+        "year": 2026,
+        "authors": [],
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-032-01638-6_11",
+        "cover": "https://drive.google.com/file/d/1-ehEswGiJ3UlTIU1Ixq9nmTEKT5YkuXc/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1NS9YS8XySIzEoRQOuO61L4XYO_wB1uUY/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-009",
+        "title": "From Chalkboards to Chatbots: The Role of Generative AI in Philippine Teacher Education Assessment",
+        "venue": "Innovative Educational Assessment with Generative AI: Opportunities, Challenges, and Practical Case Studies",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-032-05306-0_12",
+        "cover": "https://drive.google.com/file/d/1e9W7rUS_EiFYCYm-91BLzETxmTug0Zpj/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/18k-5Be3c_a4rU878nCnWgcFuPa9XlSSB/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-008",
+        "title": "The Foundations of Reskilling and Upskilling",
+        "venue": "Reskilling and Upskilling in the Age of AI: A Practical Guide to Workforce Transformation",
+        "year": 2025,
+        "authors": [],
+        "publisher": "Taylor & Francis",
+        "doi": "10.1201/9781003611677-2",
+        "cover": "https://drive.google.com/file/d/1Onew17XeE9rjVIXN3eS2KHz_Mz6-c9z7/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1dWKL9P0RFaD43tgHK2xhrRWg3xgKg848/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-007",
+        "title": "Teaching Medicine with Generative Artificial Intelligence (GenAI): A Review of Practices, Pitfalls, and Possibilities in Medical Education",
+        "venue": "Teaching in the Age of Medical Technology",
+        "year": 2025,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-1519-5.ch005",
+        "cover": "https://drive.google.com/file/d/1a5RCi0q7RuT4Ze6uOLhcf44inNLAfG8i/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1WwOgwv1LfMztWgs73uJ3vaB6mcLZsSwL/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-006",
+        "title": "Modernizing Mathematics Education With Artificial Intelligence: A Narrative Review of AI-Powered Tools, Thematic Trends, and Instructional Applications",
+        "venue": "The Convergence of Mathematics and AI: A New Paradigm in Education",
+        "year": 2025,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-1998-8.ch006",
+        "cover": "https://drive.google.com/file/d/1V1q-WlECLOSfKZct9aVUBDWMHOJSvlW1/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1B9pFhMhyXaxn31JoHYsSdGgxiLkJlu5e/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-005",
+        "title": "Rethinking Educational Assessment in the Age of Generative AI: Actionable Strategies to Mitigate Academic Dishonesty",
+        "venue": "Pitfalls of AI Integration in Education: Skill Obsolescence, Misuse, and Bias",
+        "year": 2025,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-0122-8.ch001",
+        "cover": "https://drive.google.com/file/d/1mnZAFzClvtqIoGfAMOU0QoLXuRzDnCG0/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1C-zaTs6XrWmpzuBGlWMdyXBZz3wOejlW/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-004",
+        "title": "AI Shaming Among Teacher Education Students: A Reflection on Acceptance and Identity in the Age of Generative Tools",
+        "venue": "Pitfalls of AI Integration in Education: Skill Obsolescence, Misuse, and Bias",
+        "year": 2025,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-0122-8.ch005",
+        "cover": "https://drive.google.com/file/d/1mnZAFzClvtqIoGfAMOU0QoLXuRzDnCG0/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1PJ5dWE-_huKzi4k4MxlhskQV90SgnOKn/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-003",
+        "title": "Equipping the Next Generation of Technicians: Navigating School Infrastructure and Technical Knowledge in the Age of AI Integration",
+        "venue": "Pitfalls of AI Integration in Education: Skill Obsolescence, Misuse, and Bias",
+        "year": 2025,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-0122-8.ch009",
+        "cover": "https://drive.google.com/file/d/1mnZAFzClvtqIoGfAMOU0QoLXuRzDnCG0/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1CnuvUMeiDdoZrbqxlHUqJ4mT5Ei3RiZO/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-002",
+        "title": "Safeguarding Educational Innovations Amid AI Disruptions: A Reassessment of Patenting for Sustained Intellectual Property Protection",
+        "venue": "Pitfalls of AI Integration in Education: Skill Obsolescence, Misuse, and Bias",
+        "year": 2025,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3373-0122-8.ch013",
+        "cover": "https://drive.google.com/file/d/1mnZAFzClvtqIoGfAMOU0QoLXuRzDnCG0/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1Kynl-7nKI8vVp7mM1mDRRk6DPUh2Jt6O/view?usp=drive_link"
+      },
+      {
+        "id": "BChap-001",
+        "title": "Determinants of Teachers' Intentions to Integrate Education for Sustainable Development (ESD) Into Physical Education and Health Curricula",
+        "venue": "Global Innovations in Physical Education and Health",
+        "year": 2024,
+        "authors": [],
+        "publisher": "IGI Global",
+        "doi": "10.4018/979-8-3693-3952-7.ch016",
+        "cover": "https://drive.google.com/file/d/1F1glf0vyb1wYKw9F4ren-FmmIgr3KxCE/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1byMrpPmnSmcg-iiO_wOWJjXkNjNrjSOE/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "id": "conference-proceedings",
+    "label": "Conference Proceedings",
+    "items": [
+      {
+        "id": "Con-003",
+        "title": "Utilization of Stellarium-based Activity: Its Effectiveness to the Academic Performance of Grade 11 STEM Strand Students",
+        "venue": "Journal of Physics: Conference Series",
+        "year": 2021,
+        "authors": [],
+        "publisher": "IOP",
+        "doi": "10.1088/1742-6596/1835/1/012082",
+        "cover": "https://drive.google.com/file/d/1jrFQyssu_jttsqMGDKE1jJcd3CSplhVY/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1Pmu5y5n_azLcd1Fwo368BhXj7izJlUOf/view?usp=drive_link"
+      },
+      {
+        "id": "Con-002",
+        "title": "Work Immersion Performance Appraisal and Evaluation of Grade 12 STEM Students in Science and Technology-based Industries",
+        "venue": "Journal of Physics: Conference Series",
+        "year": 2021,
+        "authors": [],
+        "publisher": "IOP",
+        "doi": "10.1088/1742-6596/1835/1/012013",
+        "cover": "https://drive.google.com/file/d/1-iOV3OEvY1EVil93dRuh2ngsB3vDknQI/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1gc_gWT2Kz_jnwDm-K79TVR33n7kKIeSv/view?usp=drive_link"
+      },
+      {
+        "id": "Con-001",
+        "title": "Development of a Do-It-Yourself (DIY) Gel Electrophoresis Apparatus for Grade-12 STEM General Biology Students",
+        "venue": "Journal of Physics: Conference Series",
+        "year": 2021,
+        "authors": [],
+        "publisher": "IOP",
+        "doi": "10.1088/1742-6596/1835/1/012033",
+        "cover": "https://drive.google.com/file/d/1fLYGZULZDqc4PHCiJbxDaVmrQ0RqSWKR/view?usp=drive_link",
+        "pdf": "https://drive.google.com/file/d/1qiUsPr_65LjwyYq44zuT2iz1hLfevPLH/view?usp=drive_link"
+      }
+    ]
+  }
+]

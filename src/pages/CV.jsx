@@ -46,9 +46,9 @@ export default function CV() {
             {profile.name} &mdash; {profile.title}, {profile.institution}.
           </p>
         </div>
-        {profile.cvPdf && (
+        {profile.cvUrl && (
           <a
-            href={profile.cvPdf}
+            href={profile.cvUrl}
             download
             className="shrink-0 self-start sm:self-auto inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)]"
           >

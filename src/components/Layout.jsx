@@ -2,7 +2,15 @@ import { Outlet, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Navbar from "./Navbar";
 import Cover from "./Cover";
+import { Mail } from "lucide-react";
+import Email from "./Email";
+import ProfileLinks from "./ProfileLinks";
 import { profile } from "../data/site";
+
+const lastUpdated = new Date(import.meta.env.VITE_LAST_UPDATED).toLocaleDateString("en-US", {
+  month: "long",
+  year: "numeric",
+});
 
 export default function Layout() {
   const location = useLocation();
@@ -24,12 +32,26 @@ export default function Layout() {
         <main
           id="main"
           tabIndex={-1}
-          className={`flex-grow w-full max-w-3xl mx-auto px-6 flex flex-col focus:outline-none ${isHome ? "pb-12 md:pb-20" : "py-12 md:py-20"}`}
+          className={`flex-grow w-full max-w-3xl mx-auto px-6 flex flex-col focus:outline-none ${isHome ? "pb-12 md:pb-14" : "pt-12 md:pt-20 pb-12 md:pb-14"}`}
         >
           <Outlet />
         </main>
-        <footer className="w-full text-center py-8 text-sm text-gray-500 mt-auto">
-          © {new Date().getFullYear()} {profile.name}. All rights reserved.
+        <footer className="w-full mt-auto border-t border-gray-200/80">
+          <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
+            <p className="text-center sm:text-left">
+              © {new Date().getFullYear()} {profile.name}. All rights reserved.
+              <span className="block sm:inline sm:before:content-['·'] sm:before:mx-2">Last updated {lastUpdated}</span>
+            </p>
+            <div className="flex items-center gap-4">
+              <Email
+                email={profile.email}
+                className="inline-flex items-center gap-1.5 hover:text-[var(--color-accent-blue)] transition-colors"
+              >
+                <Mail size={15} aria-hidden="true" />
+              </Email>
+              <ProfileLinks size={16} />
+            </div>
+          </div>
         </footer>
       </div>
     </MotionConfig>

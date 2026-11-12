@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { profile, pageIntros, pageTitle } from "../data/site";
+import { profile, pageIntros, pageTitle, profileLinks } from "../data/site";
+import Email from "../components/Email";
 import { external } from "../lib/links";
 import { useEntrance } from "../lib/motion";
 
-const socialLabels = { twitter: "Twitter", scholar: "Google Scholar", github: "GitHub" };
-
 export default function Contact() {
   const entrance = useEntrance();
-  // Only render socials that have a URL configured.
-  const socials = Object.entries(socialLabels).filter(([key]) => profile.socials[key]);
 
   return (
     <div className="w-full max-w-xl mx-auto">
@@ -35,12 +32,10 @@ export default function Contact() {
           <div className="space-y-4 text-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-1">Email</p>
-              <a
-                href={`mailto:${profile.email}`}
+              <Email
+                email={profile.email}
                 className="text-lg font-medium text-gray-900 hover:text-[var(--color-accent-blue)] transition-colors break-all"
-              >
-                {profile.email}
-              </a>
+              />
             </div>
 
             <div className="pt-4 border-t border-gray-100">
@@ -56,12 +51,12 @@ export default function Contact() {
             </div>
           </div>
 
-          {socials.length > 0 && (
+          {profileLinks.length > 0 && (
             <div className="pt-8 mt-8 border-t border-gray-100 flex flex-wrap justify-center gap-x-6 gap-y-2">
-              {socials.map(([key, label]) => (
+              {profileLinks.map(({ key, label, url }) => (
                 <a
                   key={key}
-                  href={profile.socials[key]}
+                  href={url}
                   {...external}
                   className="text-gray-600 hover:text-[var(--color-accent-blue)] transition-colors"
                 >

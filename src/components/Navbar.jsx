@@ -6,7 +6,7 @@ import { profile } from "../data/site";
 
 const navItems = [
   { path: "/", label: "Home" },
-  { path: "/papers", label: "Papers" },
+  { path: "/publications", label: "Publications" },
   { path: "/courses", label: "Courses" },
   { path: "/cv", label: "CV" },
   { path: "/contact", label: "Contact" },
