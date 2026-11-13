@@ -3,6 +3,8 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { profile } from "../data/site";
+// Trimmed, transparent-background copy of src/assets/logo.jpg (96px tall for sharp rendering at 28px).
+import logoMark from "../assets/logo-mark.png";
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -71,7 +73,12 @@ export default function Navbar() {
       className="sticky top-0 z-50 w-full bg-[#fafafa]/80 backdrop-blur-md border-b border-gray-100"
     >
       <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <NavLink to="/" className="font-serif font-medium text-lg tracking-tight text-gray-900 whitespace-nowrap group">
+        <NavLink
+          to="/"
+          className="flex items-center gap-2.5 font-serif font-medium text-lg tracking-tight text-gray-900 whitespace-nowrap group"
+        >
+          {/* Decorative: the name next to it is the link text. */}
+          <img src={logoMark} alt="" width={142} height={96} className="h-7 w-auto shrink-0" />
           <span className="group-hover:text-[var(--color-accent-blue)] transition-colors duration-300">
             {profile.name}
           </span>
