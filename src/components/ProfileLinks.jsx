@@ -1,8 +1,13 @@
-import { GraduationCap } from "lucide-react";
+import scholarLogo from "../assets/social-media/GoogleScholar.svg";
+import scopusLogo from "../assets/social-media/scopus.svg";
+import wosLogo from "../assets/social-media/webofscience.svg";
+import orcidLogo from "../assets/social-media/orcid.svg";
+import linkedinLogo from "../assets/social-media/linkedin.svg";
+import facebookLogo from "../assets/social-media/facebook.svg";
 import { profileLinks } from "../data/site";
 import { external } from "../lib/links";
 
-// lucide-react has no brand icons, so these are simple monogram marks in the brand's style.
+// Fallback monogram mark for profiles without a logo file.
 const Monogram = ({ text, round = false, size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
     {round ? (
@@ -24,14 +29,24 @@ const Monogram = ({ text, round = false, size }) => (
   </svg>
 );
 
-const icons = {
-  scholar: (size) => <GraduationCap size={size} aria-hidden="true" />,
-  orcid: (size) => <Monogram text="iD" round size={size} />,
-  researchgate: (size) => <Monogram text="RG" size={size} />,
-  linkedin: (size) => <Monogram text="in" size={size} />,
+// Brand logos (full colour) from assets/social-media; ResearchGate has none yet, so it falls back to a monogram.
+const logos = {
+  scholar: scholarLogo,
+  scopus: scopusLogo,
+  wos: wosLogo,
+  orcid: orcidLogo,
+  linkedin: linkedinLogo,
+  facebook: facebookLogo,
 };
 
-// Icon-only academic profile links; renders nothing until at least one URL is set in site.js.
+const icon = (key, size) =>
+  logos[key] ? (
+    <img src={logos[key]} alt="" width={size} height={size} className="block object-contain" />
+  ) : (
+    <Monogram text="RG" size={size} />
+  );
+
+// Icon-only profile links; renders nothing until at least one URL is set in site.js.
 export default function ProfileLinks({ className = "", size = 18 }) {
   if (profileLinks.length === 0) return null;
 
@@ -44,9 +59,9 @@ export default function ProfileLinks({ className = "", size = 18 }) {
             {...external}
             aria-label={`${label} (opens in a new tab)`}
             title={label}
-            className="inline-flex text-gray-500 transition-colors hover:text-[var(--color-accent-blue)]"
+            className="inline-flex rounded text-gray-500 opacity-90 transition hover:opacity-100 hover:scale-110 motion-reduce:transform-none"
           >
-            {icons[key](size)}
+            {icon(key, size)}
           </a>
         </li>
       ))}

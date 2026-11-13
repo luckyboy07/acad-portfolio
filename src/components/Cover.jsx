@@ -76,18 +76,27 @@ function Carousel() {
     exit: (direction) => ({ x: direction > 0 ? -100 : 100, opacity: 0, transition: { duration: 0.4, ease: "easeIn" } }),
   };
 
-  // Slides are decorative; the visible caption describes them.
+  // Banners are 16:9 designs with text baked in, so they are shown whole (object-contain);
+  // on wide screens a blurred copy fills the sides. The visible caption describes each slide.
   const image = (
-    <img
-      src={slide.image}
-      alt=""
-      width={1600}
-      height={600}
-      loading={currentIndex === 0 ? "eager" : "lazy"}
-      fetchPriority={currentIndex === 0 ? "high" : "auto"}
-      decoding="async"
-      className="w-full h-full object-cover object-center"
-    />
+    <>
+      <img
+        src={slide.image}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-70"
+      />
+      <img
+        src={slide.image}
+        alt=""
+        width={1600}
+        height={900}
+        loading={currentIndex === 0 ? "eager" : "lazy"}
+        fetchPriority={currentIndex === 0 ? "high" : "auto"}
+        decoding="async"
+        className="relative w-full h-full object-contain object-center"
+      />
+    </>
   );
 
   return (
@@ -99,7 +108,7 @@ function Carousel() {
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
-      className="relative w-full h-[200px] sm:h-[280px] md:h-[320px] bg-gray-100 overflow-hidden shadow-sm"
+      className="relative w-full h-[56.25vw] max-h-[420px] bg-gray-900 overflow-hidden shadow-sm"
     >
       {reduceMotion ? (
         <div className="absolute inset-0">{image}</div>
@@ -126,7 +135,7 @@ function Carousel() {
         aria-live="polite"
         className="absolute left-3 top-3 sm:top-auto sm:bottom-3 sm:right-[calc(50%+76px)] pointer-events-none"
       >
-        <span className="inline-block rounded bg-black/45 px-2 py-1 text-xs sm:text-sm font-medium text-white">
+        <span className="inline-block max-w-[calc(100vw-1.5rem)] sm:max-w-md rounded bg-black/60 px-2 py-1 text-xs sm:text-sm font-medium leading-snug text-white">
           {slide.caption}
         </span>
       </p>

@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
 import { profile, pageIntros, pageTitle, profileLinks } from "../data/site";
 import Email from "../components/Email";
-import { external } from "../lib/links";
+import ProfileLinks from "../components/ProfileLinks";
 import { useEntrance } from "../lib/motion";
+import photoWebp from "../assets/contact-photo-240.webp";
+import photoJpg from "../assets/contact-photo-240.jpg";
 
 export default function Contact() {
   const entrance = useEntrance();
@@ -24,9 +25,18 @@ export default function Contact() {
       >
         <div className="space-y-6">
           <div className="flex justify-center mb-8">
-            <div className="w-20 h-20 bg-[var(--color-accent-blue)]/10 rounded-full flex items-center justify-center text-[var(--color-accent-blue)]">
-              <Mail size={32} aria-hidden="true" />
-            </div>
+            <picture className="block w-24 h-24 rounded-full overflow-hidden border-4 border-[var(--color-accent-blue)]/10 shadow-sm">
+              <source srcSet={photoWebp} type="image/webp" />
+              <img
+                src={photoJpg}
+                alt={`Portrait of ${profile.name}`}
+                width={240}
+                height={240}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </picture>
           </div>
 
           <div className="space-y-4 text-center">
@@ -52,17 +62,8 @@ export default function Contact() {
           </div>
 
           {profileLinks.length > 0 && (
-            <div className="pt-8 mt-8 border-t border-gray-100 flex flex-wrap justify-center gap-x-6 gap-y-2">
-              {profileLinks.map(({ key, label, url }) => (
-                <a
-                  key={key}
-                  href={url}
-                  {...external}
-                  className="text-gray-600 hover:text-[var(--color-accent-blue)] transition-colors"
-                >
-                  {label}
-                </a>
-              ))}
+            <div className="pt-8 mt-8 border-t border-gray-100 flex justify-center">
+              <ProfileLinks size={28} className="flex-wrap justify-center gap-5" />
             </div>
           )}
         </div>

@@ -17,7 +17,11 @@ import { publicationSections, publicationsPath } from "./publicationList.js";
  * @property {string | null} office      Room / building. Rendered only when set.
  * @property {string} cvUrl       CV PDF in /public (e.g. "/cv.pdf") or an external link. Empty = no "Download CV" button.
  * @property {string | null} location  City / country. Rendered only when set.
- * @property {{ scholar: string, orcid: string, researchgate: string, linkedin: string }} profiles  Academic profile URLs; each link is rendered only when set.
+ * @property {Record<ProfileKey, string>} profiles  Profile URLs; each link is rendered only when set.
+ */
+
+/**
+ * @typedef {"scholar" | "scopus" | "wos" | "orcid" | "researchgate" | "linkedin" | "facebook"} ProfileKey
  */
 
 /**
@@ -37,31 +41,6 @@ import { publicationSections, publicationsPath } from "./publicationList.js";
  */
 
 /**
- * @typedef {Object} Course
- * @property {number} id
- * @property {string} courseCode
- * @property {string} title
- * @property {string} semester
- * @property {string} description
- */
-
-/**
- * @typedef {Object} CvEntry
- * @property {string} title
- * @property {string} org
- * @property {string} period
- * @property {string} [note]
- */
-
-/**
- * @typedef {Object} Presentation
- * @property {number} id
- * @property {string} title
- * @property {string} venue
- * @property {number} year
- */
-
-/**
  * @typedef {Object} HeroSlide
  * @property {number} id
  * @property {string} image
@@ -71,39 +50,41 @@ import { publicationSections, publicationsPath } from "./publicationList.js";
 /** @type {Profile} */
 export const profile = {
   name: "Dharel P. Acut",
-  title: "Assistant Professor of Computer Science",
-  institution: "University of the Philippines Diliman",
-  department: "Department of Computer Science",
-  // TODO(client): confirm wording
-  bio: "I am a computer science educator and researcher working at the intersection of computing and education. My work focuses on STEM education and educational technology, especially how technology can make learning more accessible, engaging, and effective.",
-  // TODO(client): confirm location (Cebu City vs Quezon City)
+  title: "Licensed Professional Teacher and Associate Member of the National Research Council of the Philippines (DOST–NRCP)",
+  institution: "Cebu Normal University",
+  department: "Graduate Student",
+  bio: "Licensed Professional Teacher and Associate Member of DOST–NRCP, researching science education, sustainability education, socio-scientific issues, AI in education, and the learning sciences.",
   location: "Cebu City, Philippines",
-  // TODO(client): use institutional up.edu.ph email if available
-  email: { user: "dharelacut", domain: "gmail.com" },
-  // TODO(content): replace with Dharel's real office room/building ("Room 404, Exactum Building" is template data). Set to null to hide.
-  office: "Room 404, Exactum Building",
+  email: { user: "sirdharel.acut", domain: "gmail.com" },
+  office: null,
   // TODO(client): send the CV (PDF or link). Put a PDF in /public as cv.pdf and set "/cv.pdf".
   // While empty, the home page shows "Contact Me" instead of "Download CV".
   cvUrl: "",
-  // TODO(client): Google Scholar, ORCID, ResearchGate and LinkedIn profile URLs.
   // Empty ones are hidden (hero, footer and Contact page).
   profiles: {
-    scholar: "",
-    orcid: "",
+    scholar: "https://scholar.google.com/citations?user=TS_QnyMAAAAJ&hl=en",
+    scopus: "https://www.scopus.com/authid/detail.uri?authorId=57223048663",
+    wos: "https://www.webofscience.com/wos/author/record/AAV-7603-2021",
+    orcid: "https://orcid.org/0000-0002-9608-1292",
     researchgate: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/acutdharelph/",
+    facebook: "https://www.facebook.com/dharel.acut",
   },
 };
 
+/** @type {Record<ProfileKey, string>} */
 const profileLabels = {
   scholar: "Google Scholar",
+  scopus: "Scopus",
+  wos: "Web of Science",
   orcid: "ORCID",
   researchgate: "ResearchGate",
   linkedin: "LinkedIn",
+  facebook: "Facebook",
 };
 
 /** Academic profile links that have a URL set, in display order: [{ key, label, url }]. */
-export const profileLinks = Object.entries(profileLabels)
+export const profileLinks = /** @type {[ProfileKey, string][]} */ (Object.entries(profileLabels))
   .filter(([key]) => profile.profiles[key])
   .map(([key, label]) => ({ key, label, url: profile.profiles[key] }));
 
@@ -118,18 +99,27 @@ export const homeStats = [
   { id: "extra", label: "Citations", value: null },
 ];
 
-// TODO(content): replace with Dharel's real About Me text (the paragraphs below are mock data).
 export const about = {
   // "At a glance" list beside the About text. Position comes from `profile`; research areas from `interests`.
-  // TODO(client): degrees, newest first, e.g. { degree: "Ph.D. in …", school: "…", year: "2020" }. Hidden while empty.
+  // TODO(client): exact graduate program name and graduation years.
   /** @type {{ degree: string, school: string, year?: string }[]} */
-  education: [],
-  paragraphs: [
-    "I am an Assistant Professor at the Department of Computer Science, University of the Philippines Diliman. My research sits at the intersection of computing and education, with a focus on how technology can make learning more accessible, engaging, and effective.",
-    "Before joining UP Diliman, I worked on research projects spanning STEM education, educational technology, and data-driven approaches to curriculum design, collaborating with researchers across Asia and Europe.",
-    "Outside of research and teaching, I enjoy mentoring students, contributing to open educational resources, and exploring the outdoors.",
+  education: [
+    { degree: "Graduate studies · DOST–SEI CBPSME Scholar", school: "Cebu Normal University", year: "Ongoing" },
+    { degree: "Bachelor of Secondary Education, major in General Science (cum laude)", school: "MSU–Iligan Institute of Technology" },
   ],
-  interests: ["STEM Education", "Educational Technology", "Computing Education", "Learning Analytics"],
+  paragraphs: [
+    "Dharel P. Acut is a Licensed Professional Teacher and Associate Member of the National Research Council of the Philippines (DOST–NRCP). He earned his degree in Secondary Education major in General Science from Mindanao State University–Iligan Institute of Technology (MSU-IIT), graduating cum laude. He is currently a graduate student at Cebu Normal University, where he is conducting research on the development of a virtual repository of interactive simulations for science teaching and learning as a DOST–Science Education Institute Capacity Building Program in Science and Mathematics Education (DOST-SEI CBPSME) scholar.",
+    "His scholarly interests encompass science education, sustainability education, socio-scientific issues, artificial intelligence in education, and the learning sciences. He has authored more than 30 scholarly works, including journal articles, book chapters, and conference papers, with publications indexed in Scopus and Web of Science.",
+    "His professional experience includes teaching appointments at Cebu Technological University–Main Campus (Cebu City) and Colegio de San Antonio de Padua (Danao City), as well as serving as Science Coordinator and faculty member at Sotero B. Cabahug FORUM for Literacy in Consolacion, Cebu. Beyond his teaching and research engagements, Sir Dharel serves as a peer reviewer of scholarly manuscripts for leading international academic publishers, including Elsevier, Springer Nature, Taylor & Francis, SAGE, and Frontiers.",
+    "His work reflects a continuing commitment to advancing science education, fostering research-informed teaching practices, and contributing to scholarly conversations on emerging developments in education.",
+  ],
+  interests: [
+    "Science Education",
+    "Sustainability Education",
+    "Socio-scientific Issues",
+    "AI in Education",
+    "Learning Sciences",
+  ],
 };
 
 /** Short page intros, kept here so all copy lives in one place. */
@@ -137,19 +127,31 @@ export const pageIntros = {
   // TODO(content): replace with Dharel's real research summary (mentions template research areas).
   papers:
     "A collection of my recent academic work, centered on natural language processing, morphology, and cognitively-motivated computational models.",
-  // TODO(content): confirm the teaching focus (the institution is filled in from profile.institution).
-  courses: "focusing on foundations and advanced topics in computational linguistics.",
   // TODO(content): confirm Dharel's collaboration interests.
   contact:
     "I'm always open to discussing research collaborations, sharing ideas on NLP and linguistics, or exploring new opportunities.",
 };
 
-// TODO(content): add Dharel's highlight photos. While this list is empty, the home page shows a
-// designed pattern banner instead of a carousel. Add one entry per photo to bring the carousel back:
-//   { id: 1, image: "/hero/keynote.jpg", caption: "Keynote at …" }
-// Put the images in /public (e.g. "/hero/keynote.jpg"), ideally ~1600×600 and < 300 KB.
+// Home page carousel. Banners are 16:9 (1600×900 WebP in /public/hero, rendered from the
+// source SVGs in src/assets/carousel). While this list is empty, a pattern banner is shown instead.
 /** @type {HeroSlide[]} */
-export const heroSlides = [];
+export const heroSlides = [
+  {
+    id: 1,
+    image: "/hero/highlight-1.webp",
+    caption: "Science Education Research on Teacher Well-Being and Generative AI Featured at Singapore Symposium",
+  },
+  {
+    id: 2,
+    image: "/hero/highlight-2.webp",
+    caption: "Research Highlights Creative Inquiry and Ethical AI Use in Higher Education at International Conference in Malaysia",
+  },
+  {
+    id: 3,
+    image: "/hero/highlight-3.webp",
+    caption: "STEM Education Studies on Astronomy, Industry Immersion, and Laboratory Innovation Presented in Vietnam",
+  },
+];
 
 // TODO(content): replace ALL papers with Dharel's real publications.
 // Every entry in papers.json is template data authored by "Jane Eriksson" et al. on Finnish/Uralic topics.
@@ -161,88 +163,7 @@ const allPapers = papersData;
 /** Published papers (rows marked show = FALSE in the sheet are hidden). */
 export const papers = allPapers.filter((p) => !p.hidden);
 
-// TODO(content): replace with Dharel's real courses at UP Diliman (codes, titles, semesters are template data).
-// TODO(client): current courses (code, title, semester). The first 3 also appear in the home page Teaching teaser.
-/** @type {Course[]} */
-export const courses = [
-  {
-    id: 1,
-    courseCode: "COMP-LING-401",
-    title: "Introduction to Natural Language Processing",
-    semester: "Fall 2024",
-    description:
-      "Fundamentals of NLP, including text processing, linguistic structure, sequence modeling, and an introduction to neural network approaches.",
-  },
-  {
-    id: 2,
-    courseCode: "COMP-LING-550",
-    title: "Advanced Deep Learning for Text",
-    semester: "Spring 2024",
-    description:
-      "Seminar-style course focusing on transformer architectures, fine-tuning large language models, and alignment techniques.",
-  },
-  {
-    id: 3,
-    courseCode: "COGS-302",
-    title: "Language and Cognition",
-    semester: "Fall 2023",
-    description:
-      "An interdisciplinary look at how language shapes thought, covering psycholinguistics, sentence processing, and computational models of cognition.",
-  },
-  {
-    id: 4,
-    courseCode: "COMP-LING-600",
-    title: "Semantic Representation in AI Systems",
-    semester: "Spring 2023",
-    description:
-      "Graduate seminar evaluating classical symbolic representations versus distributed representations, and their unification.",
-  },
-];
-
-export const cv = {
-  // TODO(content): replace with Dharel's real education (Stanford Ph.D. and University of Turku B.A. are template data).
-  /** @type {CvEntry[]} */
-  education: [
-    {
-      title: "Ph.D. in Computational Linguistics",
-      org: "Stanford University",
-      period: "2016 — 2020",
-      note: 'Dissertation: "Cognitively Plausible Parsing Strategies in Neural Network Models"',
-    },
-    {
-      title: "B.A. in Linguistics and Computer Science",
-      org: "University of Turku",
-      period: "2012 — 2016",
-    },
-  ],
-  // TODO(content): replace with Dharel's real appointments ("Associate Professor, University of Helsinki" and the MIT postdoc are template data).
-  /** @type {CvEntry[]} */
-  appointments: [
-    {
-      title: "Associate Professor",
-      org: "Department of Computer Science, University of Helsinki",
-      period: "2023 — Present",
-    },
-    {
-      title: "Postdoctoral Researcher",
-      org: "Massachusetts Institute of Technology (MIT)",
-      period: "2020 — 2023",
-    },
-  ],
-  // TODO(content): replace with Dharel's real invited talks (these are template data).
-  /** @type {Presentation[]} */
-  presentations: [
-    { id: 1, title: "Keynote: The Future of Multilingual LLMs", venue: "Nordic NLP Symposium", year: 2024 },
-    {
-      id: 2,
-      title: "Invited Talk: Computational Modeling of Finnic Languages",
-      venue: "Stanford NLP Seminar",
-      year: 2023,
-    },
-  ],
-};
-
-/** Papers sorted newest first; used by Home, Papers and CV. */
+/** Papers sorted newest first; used by the Papers page. */
 export const papersByYear = [...papers].sort((a, b) => b.year - a.year);
 
 /** Builds a document title for a sub-page. */

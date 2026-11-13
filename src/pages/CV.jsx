@@ -1,34 +1,9 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
-import { profile, papersByYear, courses, cv, pageTitle } from "../data/site";
+import { profile, pageTitle } from "../data/site";
 import { useEntrance } from "../lib/motion";
 
-function Section({ title, children, item }) {
-  return (
-    <motion.section {...item}>
-      <h2 className="text-xl font-serif text-gray-900 mb-6 border-l-2 border-[var(--color-accent-blue)] pl-4">{title}</h2>
-      {children}
-    </motion.section>
-  );
-}
-
-function Entries({ entries }) {
-  return (
-    <div className="space-y-6">
-      {entries.map((entry) => (
-        <div key={`${entry.title}-${entry.period}`}>
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline sm:gap-4 mb-1">
-            <h3 className="font-medium text-gray-900">{entry.title}</h3>
-            <span className="text-sm font-medium text-gray-500 shrink-0">{entry.period}</span>
-          </div>
-          <p className="text-gray-600">{entry.org}</p>
-          {entry.note && <p className="text-sm text-gray-500 mt-1">{entry.note}</p>}
-        </div>
-      ))}
-    </div>
-  );
-}
-
+// Placeholder page: CV sections to be added. The download button appears once profile.cvUrl is set.
 export default function CV() {
   const entrance = useEntrance();
 
@@ -43,7 +18,7 @@ export default function CV() {
         <div>
           <h1 className="text-3xl font-serif text-gray-900 mb-2">Curriculum Vitae</h1>
           <p className="text-gray-600 max-w-xl">
-            {profile.name} &mdash; {profile.title}, {profile.institution}.
+            {profile.name} &mdash; {profile.title}
           </p>
         </div>
         {profile.cvUrl && (
@@ -56,47 +31,6 @@ export default function CV() {
             Download CV (PDF)
           </a>
         )}
-      </motion.div>
-
-      <motion.div {...entrance.list} className="space-y-12">
-        <Section title="Education" item={entrance.item}>
-          <Entries entries={cv.education} />
-        </Section>
-
-        <Section title="Academic Appointments" item={entrance.item}>
-          <Entries entries={cv.appointments} />
-        </Section>
-
-        <Section title="Selected Publications" item={entrance.item}>
-          <ul className="space-y-4 list-disc list-outside ml-4 text-gray-600">
-            {papersByYear.map((paper) => (
-              <li key={paper.id} className="pl-2">
-                <span className="font-medium text-gray-900">{paper.authors}</span>. ({paper.year}). "{paper.title}".{" "}
-                <span className="italic">{paper.venue}</span>.
-              </li>
-            ))}
-          </ul>
-        </Section>
-
-        <Section title="Teaching Experience" item={entrance.item}>
-          <ul className="space-y-4 list-disc list-outside ml-4 text-gray-600">
-            {courses.map((course) => (
-              <li key={course.id} className="pl-2">
-                <span className="font-medium text-gray-900">{course.title}</span> ({course.courseCode}), {course.semester}.
-              </li>
-            ))}
-          </ul>
-        </Section>
-
-        <Section title="Invited Talks & Presentations" item={entrance.item}>
-          <ul className="space-y-4 list-disc list-outside ml-4 text-gray-600">
-            {cv.presentations.map((pres) => (
-              <li key={pres.id} className="pl-2">
-                "{pres.title}". <span className="italic">{pres.venue}</span>, {pres.year}.
-              </li>
-            ))}
-          </ul>
-        </Section>
       </motion.div>
     </div>
   );

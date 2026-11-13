@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
-import { profile, about, courses, homeStats } from "../data/site";
+import { profile, about, homeStats } from "../data/site";
 import { allPublications, publicationsPath } from "../data/publicationList";
 import PublicationCard from "../components/PublicationCard";
 import ProfileLinks from "../components/ProfileLinks";
@@ -10,7 +10,6 @@ import { external } from "../lib/links";
 import { useEntrance } from "../lib/motion";
 
 const RECENT_COUNT = 5;
-const TEACHING_COUNT = 3;
 
 const sectionHeading = "flex items-baseline justify-between gap-4 border-b border-gray-200 pb-3 mb-6";
 const sectionLink =
@@ -33,8 +32,6 @@ export default function Home() {
       <Stats />
 
       <About />
-
-      {courses.length > 0 && <Teaching />}
 
       <section aria-labelledby="recent-publications" className="w-full mt-14 md:mt-16">
         <div className={sectionHeading}>
@@ -218,31 +215,6 @@ function About() {
           ))}
         </div>
       </div>
-    </section>
-  );
-}
-
-function Teaching() {
-  return (
-    <section aria-labelledby="teaching" className="w-full mt-14 md:mt-16">
-      <div className={sectionHeading}>
-        <h2 id="teaching" className="text-xl font-serif text-gray-900">
-          Teaching
-        </h2>
-        <Link to="/courses" className={sectionLink}>
-          All courses <span aria-hidden="true">→</span>
-        </Link>
-      </div>
-      <ul className="grid gap-3 sm:grid-cols-3">
-        {courses.slice(0, TEACHING_COUNT).map((course) => (
-          <li key={course.id} className="rounded-xl border border-gray-200/80 bg-white p-4 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-accent-blue)]">
-              {course.courseCode} <span aria-hidden="true">&bull;</span> {course.semester}
-            </p>
-            <h3 className="mt-1 font-medium leading-snug text-gray-900">{course.title}</h3>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }
