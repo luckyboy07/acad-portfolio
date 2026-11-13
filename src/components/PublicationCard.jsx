@@ -43,7 +43,7 @@ const linkClass =
 
 // One publication.
 //   variant="full"    (default) cover, publisher logos, DOI and Download PDF button — the Publications page.
-//   variant="compact" tight text-only entry for lists, e.g. the home page.
+//   variant="compact" tight text-only entry (title, authors, venue, DOI) for lists, e.g. the home page.
 // `headingLevel` lets a page nest the title under its own h2.
 export default function PublicationCard({ item, headingLevel = 2, variant = "full" }) {
   const Heading = `h${headingLevel}`;
@@ -80,19 +80,11 @@ export default function PublicationCard({ item, headingLevel = 2, variant = "ful
         {title}
         <Authors authors={item.authors} className="mt-1 text-sm" />
         <VenueYear item={item} className="mt-1 text-sm" />
-        {(doiUrl || item.pdf) && (
-          <p className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
-            {doiUrl && (
-              <a href={doiUrl} {...external} className={`${linkClass} break-all`}>
-                DOI: {item.doi}
-              </a>
-            )}
-            {item.pdf && (
-              <a href={item.pdf} {...external} className={`${linkClass} inline-flex items-center gap-1 font-medium`}>
-                <Download size={14} aria-hidden="true" />
-                PDF
-              </a>
-            )}
+        {doiUrl && (
+          <p className="mt-1.5 text-sm">
+            <a href={doiUrl} {...external} className={`${linkClass} break-all`}>
+              DOI: {item.doi}
+            </a>
           </p>
         )}
       </article>

@@ -44,7 +44,13 @@ import { publicationSections, publicationsPath } from "./publicationList.js";
  * @typedef {Object} HeroSlide
  * @property {number} id
  * @property {string} image
- * @property {string} caption
+ * @property {string} alt        Describes the photo, e.g. "Dharel P. Acut presenting at CoSMEd 2025 in Penang".
+ * @property {string} title      Main line in the text panel (was `caption`).
+ * @property {string} [caption]  Deprecated: used as the title when `title` is missing.
+ * @property {string} [event]    Conference name.
+ * @property {string} [location] City, country.
+ * @property {string} [date]     Human-readable, e.g. "8–10 September 2025".
+ * @property {string} [href]     Optional "Learn more" link (internal path or external URL).
  */
 
 /** @type {Profile} */
@@ -132,24 +138,43 @@ export const pageIntros = {
     "I'm always open to discussing research collaborations, sharing ideas on NLP and linguistics, or exploring new opportunities.",
 };
 
-// Home page carousel. Banners are 16:9 (1600×900 WebP in /public/hero, rendered from the
-// source SVGs in src/assets/carousel). While this list is empty, a pattern banner is shown instead.
+// Home page hero: a split layout with the poster on the left and a text panel on the right.
+// Posters are 16:9 (1600×900 WebP in /public/hero, rendered from the source SVGs in src/assets/carousel)
+// and are never cropped. Per slide:
+//   image (required), alt (describes the photo; don't repeat the title), title (required),
+//   event, location, date (optional; the meta line shows "date · location" for the parts that exist),
+//   href (optional "Learn more →" link; internal path like "/publications" or an external URL).
+// While this list is empty, a pattern banner is shown instead.
 /** @type {HeroSlide[]} */
 export const heroSlides = [
   {
     id: 1,
     image: "/hero/highlight-1.webp",
-    caption: "Science Education Research on Teacher Well-Being and Generative AI Featured at Singapore Symposium",
+    alt: "Event banner showing Dharel P. Acut in front of the Singapore skyline at Marina Bay",
+    title: "Science Education Research on Teacher Well-Being and Generative AI Featured at Singapore Symposium",
+    // TODO(client): confirm. The poster reads "Strategic Growth Area – Science of Learning Symposium 2025",
+    // 12 September 2025, National Institute of Education, NTU; fill in event and date once confirmed.
+    event: "",
+    date: "",
+    location: "Singapore", // TODO(client): confirm
   },
   {
     id: 2,
     image: "/hero/highlight-2.webp",
-    caption: "Research Highlights Creative Inquiry and Ethical AI Use in Higher Education at International Conference in Malaysia",
+    alt: "Dharel P. Acut speaking into a microphone in a barong, on an event banner with Penang landmarks",
+    title: "Research Highlights Creative Inquiry and Ethical AI Use in Higher Education at International Conference in Malaysia",
+    event: "CoSMEd 2025 – 11th International Conference on Science and Mathematics Education", // TODO(client): confirm
+    location: "SEAMEO RECSAM, Penang, Malaysia", // TODO(client): confirm
+    date: "8–10 September 2025", // TODO(client): confirm
   },
   {
     id: 3,
     image: "/hero/highlight-3.webp",
-    caption: "STEM Education Studies on Astronomy, Industry Immersion, and Laboratory Innovation Presented in Vietnam",
+    alt: "Dharel P. Acut wearing a participant badge, on an event banner with Hanoi's Turtle Tower and Temple of Literature",
+    title: "STEM Education Studies on Astronomy, Industry Immersion, and Laboratory Innovation Presented in Vietnam",
+    event: "ICTER 2019 & I AM STEM 2019", // TODO(client): confirm
+    location: "Thai Nguyen, Vietnam", // TODO(client): confirm
+    date: "27–29 September 2019", // TODO(client): confirm
   },
 ];
 

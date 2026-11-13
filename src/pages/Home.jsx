@@ -143,77 +143,18 @@ function Stats() {
 }
 
 function About() {
-  const glanceTerm = "text-xs font-semibold uppercase tracking-wider text-gray-500";
-
   return (
     <section aria-labelledby="about-me" className="w-full mt-14 md:mt-16">
       <div className={sectionHeading}>
         <h2 id="about-me" className="text-xl font-serif text-gray-900">
           About me
         </h2>
-        <Link to="/cv" className={sectionLink}>
-          Read full CV <span aria-hidden="true">→</span>
-        </Link>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-[220px_1fr] md:gap-10 items-start">
-        <aside aria-labelledby="at-a-glance" className="rounded-xl border border-gray-200/80 bg-white p-5 shadow-sm">
-          <h3 id="at-a-glance" className="font-serif text-gray-900 mb-4">
-            At a glance
-          </h3>
-          <dl className="space-y-4 text-sm">
-            <div>
-              <dt className={glanceTerm}>Position</dt>
-              <dd className="mt-1 text-gray-700">
-                {profile.title}
-                <span className="block text-gray-500">
-                  {profile.department}, {profile.institution}
-                </span>
-              </dd>
-            </div>
-
-            {about.education.length > 0 && (
-              <div>
-                <dt className={glanceTerm}>Education</dt>
-                {about.education.map((e) => (
-                  <dd key={`${e.degree}-${e.school}`} className="mt-1 text-gray-700">
-                    {e.degree}
-                    <span className="block text-gray-500">
-                      {e.school}
-                      {e.year && <> · {e.year}</>}
-                    </span>
-                  </dd>
-                ))}
-              </div>
-            )}
-
-            {about.interests.length > 0 && (
-              <div>
-                <dt className={glanceTerm}>Research areas</dt>
-                <dd className="mt-1">
-                  {/* Plain labels: the Publications page can't filter by topic, so these aren't links */}
-                  <ul className="space-y-1 text-gray-700">
-                    {about.interests.map((interest) => (
-                      <li key={interest} className="flex items-baseline gap-2">
-                        <span
-                          aria-hidden="true"
-                          className="h-1.5 w-1.5 shrink-0 translate-y-[-1px] rounded-full bg-[var(--color-accent-blue)]"
-                        />
-                        {interest}
-                      </li>
-                    ))}
-                  </ul>
-                </dd>
-              </div>
-            )}
-          </dl>
-        </aside>
-
-        <div className="space-y-4 text-gray-600 leading-relaxed">
-          {about.paragraphs.map((text, i) => (
-            <p key={i}>{text}</p>
-          ))}
-        </div>
+      <div className="space-y-4 text-gray-600 leading-relaxed">
+        {about.paragraphs.map((text, i) => (
+          <p key={i}>{text}</p>
+        ))}
       </div>
     </section>
   );
